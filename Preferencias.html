@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- JQuery  -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+  <script src="js/jquery.floating-share.js" type="text/javascript"></script>
+  <script src="http://www.jqueryscript.net/demo/jQuery-Plugin-For-Horizontal-Floating-Social-Share-Bar/js/jquery.floating-share.js" type="text/javascript"></script>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  
+  
+  <title>Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <!-- Slider  -->
+<link href="nouislider.css" rel="stylesheet">
+<script src="nouislider.js"></script>
+
+</head>
+
+<body>
+<!-- JQuery  -->
+  <div class="container"> 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('select').formSelect();
+            $('.datepicker').datepicker();});
+    </script> 
+</div>
+
+
+<script src="js/ValidacionCarros.js"></script>
+
+
+    <nav class="pink.lighten-4 role="navigation>
+    <div class="nav-wrapper container"><a id="logo-container" href="" class="brand-logo"></a>
+      <ul class="left hide-on-med-and-down">
+        <li><a href="#">Preferencia de Autos</a></li>
+      </ul>
+      </div>
+    </nav>
+  
+  
+    <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h3 class="header center brown-text text-darken-1">Formulario de Tendencias</h3>
+      <div class="row center">
+        <h5 class="header col s12 light">Registre su preferencia en vehículos de acuerdo a los siguientes campos</h5>
+      </div>
+
+      <form action="/login.php" method="post" id="formulario" onsubmit="return validarFormulario();">
+      <div class="container">
+        <div class="section">
+    
+          <!--   Icon Section   -->
+          <div class="row">
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">color_lens</i></h2>
+                <h4 class="center">Color</h4>
+    
+                <p class="light">Escoja uno de los colores disponibles en nuestra tienda</p>
+                <select id="color">
+                    <option value="" disabled selected>Escoja un color</option>
+                    <option value="1">Blanco</option>
+                    <option value="2">Negro</option>
+                    <option value="3">Gris</option>
+                    <option value="4">Plata</option>
+                    <option value="5">Rojo</option>
+                    <option value="6">Azul</option>
+                    <option value="7">Dorado</option>
+                    <option value="8">Beige</option>
+                  </select>
+                 </div>
+             </div>
+
+    
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+                <h4 class="center">Marca</h4>
+    
+                <p class="light">Escoja la marca de carro de su preferencia</p>
+                    <select id="marca">
+                        <option value="" disabled selected>Escoja una marca</option>
+                        <option value="1">Audi</option>
+                        <option value="2">Bentley</option>
+                        <option value="3">BMW</option>
+                        <option value="4">Chevrolet</option>
+                        <option value="5">Citroen</option>
+                        <option value="6">Fiat</option>
+                        <option value="1">Ford</option>
+                        <option value="2">Honda</option>
+                        <option value="3">Hyundai</option>
+                        <option value="4">Jeep</option>
+                        <option value="5">Kia</option>
+                        <option value="6">Mazda</option>
+                        <option value="1">Mercedes</option>
+                        <option value="2">Mitsubishi</option>
+                        <option value="3">Nissan</option>
+                        <option value="4">Peugeot</option>
+                        <option value="5">Renault</option>
+                        <option value="6">Tesla</option>
+                        <option value="4">Toyota</option>
+                        <option value="5">Volkwagen</option>
+                        <option value="6">Volvo</option>
+                      </select>
+              </div>
+            </div>
+    
+            <div class="col s12 m4">
+              <div class="icon-block">
+                <h2 class="center light-blue-text"><i class="material-icons">directions_car</i></h2>
+                <h4 class="center">Modelo</h4>
+    
+                <p class="light">Digite el modelo de carro que desería comprar (Entre 2000 - 2021)</p>
+                     <input id="modelo" type="text" class="validate">
+              </div>
+            </div>
+
+            <div class="icon-block">
+                <h1 class="center light-blue-text"><i class="material-icons">attach_money</i></h1>
+                <h4 class="center">Precio</h4>
+                    <p class="range-field col 2">Seleccione el valor máximo (En millones) que estaría dispuesto a pagar por el vehículo
+                        <input type="range" name="rangeInput" min="10'000.000" max="100'000.000" onchange="updateTextInput(this.value);">
+                        <output type="text" id="textInput" value=""> 
+                    </p>
+              </div>
+
+
+    
+            </div>
+      </div>
+
+      </div>
+
+      <div class="row center">
+        <button class="btn-large waves-effect waves-light" type="submit" name="action" onclick="javascript:validarFormulario();">Enviar
+          <i class="material-icons right">send</i>
+        </button>
+
+    </div>
+
+    </form>
+  </div>
+
+
+  </body>
+</html>
